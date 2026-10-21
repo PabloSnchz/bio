@@ -4,73 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🐈‍⬛ Bóveda del Gato Negro — Link in Bio</title>
+    <meta name="theme-color" content="#0F1117">
+    <!-- Favicon: gato oficial de Gato Negro Factory -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='8' fill='%23232A3A' stroke='%237B5CFF'/%3E%3Cpath d='M8 25V12l3-5 3 4h4l3-4 3 5v13c0 1-1 2-2 2H10c-1 0-2-1-2-2z' fill='%230F1117'/%3E%3Cellipse cx='13' cy='17' rx='1.6' ry='2.2' fill='%23F2B94B'/%3E%3Cellipse cx='19' cy='17' rx='1.6' ry='2.2' fill='%23F2B94B'/%3E%3C/svg%3E">
     <style>
-        /* Estilos idénticos a la Bóveda */
+        /* Theme oficial Gato Negro (Gato Design System): obsidiana, niebla, arcano y ámbar */
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            background:#0e0e10; color:#e9e9ee;
+            background:#0F1117; color:#F4F6FA;
             font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
             line-height:1.5; padding:30px 20px;
             min-height:100vh; display:flex; flex-direction:column; align-items:center;
         }
         .container {
             max-width:500px; width:100%;
-            background:#141418; border-radius:24px; padding:40px 24px;
-            box-shadow:0 0 0 1px #1d1d20 inset,0 8px 24px rgba(0,0,0,0.3);
+            background:#1A1F2B; border-radius:24px; padding:40px 24px;
+            box-shadow:0 0 0 1px #232A3A inset,0 8px 24px rgba(0,0,0,0.3);
         }
         
         /* Avatar y encabezado */
         .profile { text-align:center; margin-bottom:30px; }
         .avatar {
             width:100px; height:100px; border-radius:50%;
-            background:#0a0c10; border:2px solid #ffd966;
+            background:#0F1117; border:2px solid #F2B94B;
             display:flex; align-items:center; justify-content:center;
             font-size:3.5rem; margin:0 auto 12px auto;
         }
-        h1 { font-size:1.6rem; color:#ffffff; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; }
-        h1 .gold { color:#ffd966; }
-        .handle { color:#a0a0a6; font-size:0.9rem; margin-top:4px; }
+        h1 { font-size:1.6rem; color:#F4F6FA; display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; }
+        h1 .gold { color:#F2B94B; }
+        .handle { color:#8E96A3; font-size:0.9rem; margin-top:4px; }
 
         /* Tarjetas de enlaces */
         .link-card {
             display:flex; align-items:center; gap:14px;
-            padding:14px 16px; background:#0f1116;
-            border:1px solid #2a2c35; border-radius:12px;
-            text-decoration:none; color:#e0e4ed; font-weight:500;
+            padding:14px 16px; background:#232A3A;
+            border:1px solid #2E3649; border-radius:12px;
+            text-decoration:none; color:#F4F6FA; font-weight:500;
             transition:all 0.2s ease; margin-bottom:12px;
         }
         .link-card:hover {
-            border-color:#5a6e9a; transform:scale(1.02);
-            box-shadow:0 0 14px rgba(90,110,154,0.25);
+            border-color:#7B5CFF; transform:scale(1.02);
+            box-shadow:0 0 14px rgba(123,92,255,0.25);
         }
+        .link-card:focus-visible { outline:2px solid #A896FF; outline-offset:2px; }
         .link-card .icon {
             width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
         }
         .link-card .icon img { width:100%; height:100%; object-fit:contain; filter:brightness(0.9); }
+        .link-card .icon svg { width:100%; height:100%; display:block; }
         .link-card .text { flex:1; }
         .link-card .badge {
-            font-size:0.75rem; background:#1a1e28; padding:4px 10px; border-radius:20px; color:#a0a0a6;
+            font-size:0.75rem; background:#1A1F2B; padding:4px 10px; border-radius:20px; color:#C9D0DA;
         }
 
-        /* Colores personalizados de enlaces */
-        .link-boveda { border-left:4px solid #58a6ff; }
+        /* Colores de cada enlace: La Bóveda lleva el arcano de la marca; el resto, el color de cada servicio */
+        .link-boveda { border-left:4px solid #7B5CFF; }
         .link-discord { border-left:4px solid #5865F2; }
         .link-youtube { border-left:4px solid #FF0000; }
         .link-twitch { border-left:4px solid #9146FF; }
         .link-github { border-left:4px solid #fff; }
         .link-paypal { border-left:4px solid #003087; }
-        .link-apoyo { border-left:4px solid #ffd966; }
+        .link-apoyo { border-left:4px solid #F2B94B; }
         .link-instagram { border-left:4px solid #E1306C; }
 
         /* Separadores (con nuevos iconos de categoría) */
         .section-title {
             display:flex; align-items:center; gap:10px;
-            color:#ffd966; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;
-            margin:24px 0 12px 0; padding-bottom:6px; border-bottom:1px solid #2a2c35;
+            color:#F2B94B; font-size:0.8rem; text-transform:uppercase; letter-spacing:1px;
+            margin:24px 0 12px 0; padding-bottom:6px; border-bottom:1px solid #2E3649;
         }
         .section-title img { width:22px; height:22px; object-fit:contain; filter:brightness(0.9); }
 
-        footer { text-align:center; margin-top:20px; color:#5a6e9a; font-size:0.8rem; }
+        footer { text-align:center; margin-top:20px; color:#8E96A3; font-size:0.8rem; }
         @media (max-width:400px) {
             .container { padding:24px 16px; }
             .avatar { width:80px; height:80px; font-size:2.8rem; }
@@ -127,7 +132,13 @@
         Proyecto destacado
     </div>
     <a href="https://pablosnchz.github.io/gw2-wallet-ligero/" target="_blank" rel="noopener" class="link-card link-boveda">
-        <div class="icon"><img src="https://raw.githubusercontent.com/PabloSnchz/gw2-wallet-ligero/main/assets/logo-gato-negro.png" alt="Home"></div>
+        <!-- Gato oficial de Gato Negro Factory (mismo dibujo que en La Bóveda y el panel) -->
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Gato Negro Factory">
+            <rect x="1" y="1" width="30" height="30" rx="8" fill="#232A3A" stroke="#7B5CFF"/>
+            <path d="M8 25V12l3-5 3 4h4l3-4 3 5v13c0 1-1 2-2 2H10c-1 0-2-1-2-2z" fill="#0F1117"/>
+            <ellipse cx="13" cy="17" rx="1.6" ry="2.2" fill="#F2B94B"/>
+            <ellipse cx="19" cy="17" rx="1.6" ry="2.2" fill="#F2B94B"/>
+        </svg></div>
         <div class="text">Abrir Bóveda del Gato Negro(WebApp)</div>
         <div class="badge">GW2</div>
     </a>
